@@ -4,7 +4,7 @@ const Product = require("../models/Product");
 
 const getAll = catchError(async (req, res) => {
   const results = await Cart.findAll({
-    include: [Product],
+    model: [Product],
     where: { userId: req.user.id },
   });
   return res.json(results);
